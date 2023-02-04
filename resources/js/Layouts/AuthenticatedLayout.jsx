@@ -85,153 +85,82 @@ export default function Authenticated({ children }) {
                         </Link>
                     </div>
                 </div>
-                <div className="flex flex-col w-60 h-full overflow-hidden text-gray-900 bg-gray-100 min-h-screen dark:bg-zinc-800 dark:text-zinc-100">
+                <div className="flex flex-col w-64 h-full overflow-hidden text-gray-900 bg-gray-100 min-h-screen dark:bg-zinc-800 dark:text-zinc-100">
                     <div className="w-full p-2">
-                    <div className="menu">
-                        <div className="menu-header">
-                            <div className="theme-switcher">
-                                <input type="radio" id="light" value="light" name="themes"  defaultChecked={localStorage.theme == 'light' ? true : false}/>
-                                <label htmlFor="light" onClick={() => {setTheme('light')}}>
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>Light
-                                    </span>
-                                </label>
-                                <input type="radio" id="dark" value="dark" name="themes" defaultChecked={localStorage.theme == 'dark' ? true : false}/>
-                                <label htmlFor="dark" onClick={() => {setTheme('dark')}}>
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>Dark
-                                    </span>
-                                </label>
-                                <span className="slider"></span>
+                        <div className="menu">
+                            <div className="menu-header">
+                                <div className="theme-switcher">
+                                    <input type="radio" id="light" value="light" name="themes"  defaultChecked={localStorage.theme == 'light' ? true : false}/>
+                                    <label htmlFor="light" onClick={() => {setTheme('light')}}>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>Light
+                                        </span>
+                                    </label>
+                                    <input type="radio" id="dark" value="dark" name="themes" defaultChecked={localStorage.theme == 'dark' ? true : false}/>
+                                    <label htmlFor="dark" onClick={() => {setTheme('dark')}}>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>Dark
+                                        </span>
+                                    </label>
+                                    <span className="slider"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <details className="question px-4 mb-2 mt-2 w-full">
-                            <summary className="flex py-2  items-center rounded-lg">
-                                Marketing
-                                <button className="ml-auto">
-                                    <svg className="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
-                                </button>
-                            </summary>
-                            <div className="leading-normal">
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Partners
-                                    </a>
+                        <ul class="flex flex-col py-2 space-y-1">
+                            <li class="px-5">
+                                <div class="flex flex-row items-center h-8">
+                                <div class="text-sm font-light tracking-wide text-gray-500">CRM</div>
                                 </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Customers
-                                    </a>
+                            </li>
+                            <li>
+                                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 text-sm tracking-wide truncate">Organizations</span>
+                                <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-100 rounded-full">3k</span>
+                                </a>
+                            </li>
+                            <li className='pb-4'>
+                                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 text-sm tracking-wide truncate">Customers</span>
+                                <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-100 rounded-full">1.2k</span>
+                                </a>
+                            </li>
+                            <li class="px-5">
+                                <div class="flex flex-row items-center h-8">
+                                <div class="text-sm font-light tracking-wide text-gray-500">Sales</div>
                                 </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Vendors
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Agents
-                                    </a>
-                                </div>
-                            </div>
-                    </details>
-                    <details className="question px-4 mb-2 w-full">
-                            <summary className="flex py-2  items-center rounded-lg">
-                                Sales
-                                <button className="ml-auto">
-                                    <svg className="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
-                                </button>
-                            </summary>
-                            <div className="leading-normal">
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Partners
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Customers
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Vendors
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Agents
-                                    </a>
-                                </div>
-                            </div>
-                    </details>
-                    <details className="question px-4 mb-2 w-full">
-                            <summary className="flex py-2  items-center rounded-lg">
-                                CRM
-                                <button className="ml-auto">
-                                    <svg className="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
-                                </button>
-                            </summary>
-                            <div className="leading-normal">
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Partners
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Customers
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Vendors
-                                    </a>
-                                </div>
-                                <div className="flex items-center rounded-lg p-1.5 hover:bg-gray-200 dark:hover:bg-zinc-700">
-                                    <a href="#" className="flex">
-                                        <svg className="mr-2.5 h-5 w-5 flex-none stroke-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                                        </svg>
-                                        Agents
-                                    </a>
-                                </div>
-                            </div>
-                    </details>
+                            </li>
+                            <li>
+                                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 text-sm tracking-wide truncate">Invoices</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 text-sm tracking-wide truncate">Clients</span>
+                                <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-100 rounded-full">15</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
